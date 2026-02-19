@@ -18,5 +18,14 @@ namespace Game339.Shared.Services.Implementation
             _log.Info($"{nameof(StringService)}.{nameof(Reverse)} - {nameof(input)}: {input} - {nameof(output)}: {output}");
             return output;
         }
+
+        public string ReverseWords(string input)
+        {
+            if (input == null) throw new ArgumentNullException(nameof(input));
+            var words = input.Split(' ');
+            var output = string.Join(" ", words.Reverse());
+            _log.Info($"{nameof(StringService)}.{nameof(ReverseWords)} - {nameof(input)}: {input} - output: {output}");
+            return output;
+        }
     }
 }
